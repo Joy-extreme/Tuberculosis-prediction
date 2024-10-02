@@ -1,0 +1,187 @@
+{% extends 'homebase.html' %}
+{% load static %}
+
+{% block content %}
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style media="screen">
+    body {
+      background-color: #f4f4f9;
+    }
+
+    .jumbotron {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      background-image: url('{% static "images/back.jpg" %}');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+
+    .jumbotron h5,
+    h3 {
+      text-align: center;
+    }
+
+    .alert {
+      margin: 0px;
+    }
+
+    .glow {
+      font-size: 50px;
+      color: white;
+      text-align: center;
+      -webkit-animation: glow 1s ease-in-out infinite alternate;
+      -moz-animation: glow 1s ease-in-out infinite alternate;
+      animation: glow 1s ease-in-out infinite alternate;
+    }
+
+    @-webkit-keyframes glow {
+      from {
+        text-shadow: 0 0 10px #eeeeee, 0 0 20px #000000, 0 0 30px #000000, 0 0 40px #000000, 0 0 50px #9554b3, 0 0 60px #9554b3, 0 0 70px #9554b3;
+      }
+
+      to {
+        text-shadow: 0 0 20px #eeeeee, 0 0 30px #fa2d2d, 0 0 40px #fa2d2d, 0 0 50px #fa2d2d, 0 0 60px #fa2d2d, 0 0 70px #fa2d2d, 0 0 80px #fa2d2d;
+      }
+    }
+
+    .card {
+      margin-bottom: 30px;
+      border-radius: 10px;
+      border: none;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      background-color: #f8f9fa;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-body {
+      padding: 30px;
+    }
+
+    .icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .icon.important {
+      color: #dc3545;
+    }
+
+    .icon.symptoms {
+      color: #007bff;
+    }
+
+    .icon.preventive {
+      color: #28a745;
+    }
+
+    .section-title {
+      margin-bottom: 15px;
+      color: #333;
+      font-weight: bold;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .list-item,
+    .card-body p {
+      font-size: 16px;
+      color: #555;
+      text-align: left;
+    }
+
+    .divider-section {
+      text-align: center;
+      margin: 50px 0;
+    }
+
+    .divider-section h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .divider {
+      height: 2px;
+      background-color: black;
+      margin: 10px auto;
+      width: 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <br><br>
+
+  <div class="jumbotron">
+    <br>
+    <h5 class="display-3 glow">Tuberculosis Prediction System</h5>
+    <br><br><br><br><br>
+    <p>
+    <h3>Emergency ?</h3>
+    <p class="lead">
+      <a class="btn btn-danger btn-lg" href="/register" role="button">Quickly Register Now!</a>
+    </p>
+    <br><br>
+  </div>
+
+  <div class="divider-section">
+    <h2>Key Information</h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="container mt-5">
+    <div class="row mt-5 d-flex">
+      <div class="col-md-4 d-flex">
+        <div class="card mb-4 flex-fill">
+          <div class="card-body">
+            <h2 class="section-title"><i class="fas fa-exclamation-circle icon important"></i><br> Why TB Detection</h2>
+            <p class="mb-0" style="text-align: justify;">Tuberculosis is a serious infectious disease that can have severe health
+              consequences if not detected and treated early. Early detection through effective screening
+              methods is crucial for controlling the spread of TB.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex">
+        <div class="card mb-4 flex-fill">
+          <div class="card-body">
+            <h2 class="section-title"><i class="fas fa-lungs icon symptoms"></i> <br>Disease Symptoms</h2>
+            <ul>
+              <li class="list-item">Persistent cough</li>
+              <li class="list-item">Coughing up blood</li>
+              <li class="list-item">Fever</li>
+              <li class="list-item">Night sweats</li>
+              <li class="list-item">Loss of appetite</li>
+              <li class="list-item">Weight loss</li>
+              <li class="list-item">Fatigue</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex">
+        <div class="card mb-4 flex-fill">
+          <div class="card-body">
+            <h2 class="section-title"><i class="fas fa-shield-alt icon preventive"></i> <br>Preventive Measures</h2>
+            <ul>
+              <li class="list-item">Good ventilation</li>
+              <li class="list-item">Avoiding close contact with infected individuals</li>
+              <li class="list-item">Early detection and treatment</li>
+              <li class="list-item">Proper hygiene practices</li>
+              <li class="list-item">Use of masks in crowded areas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
+</body>

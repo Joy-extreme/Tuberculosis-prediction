@@ -1,0 +1,132 @@
+{% extends 'userBase.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+    <style>
+        body {
+            background-color: #f4f4f9;
+        }
+
+        .content-header {
+            text-align: center;
+            margin-top: 70px;
+            margin-bottom: 40px;
+        }
+
+        .content-header h2 {
+            font-size: 28px;
+            color: #333;
+        }
+
+        .subscription-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .plan-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .plan-header {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .plan-price {
+            font-size: 36px;
+            color: #4e54c8;
+            margin: 20px 0;
+        }
+
+        .plan-duration {
+            font-size: 18px;
+            color: #777;
+        }
+
+        .plan-features {
+            margin: 20px 0;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .plan-features li {
+            font-size: 16px;
+            color: #555;
+            margin: 10px 0;
+        }
+
+        .subscribe-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #dc3545;
+            border-radius: 30px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .subscribe-btn:hover {
+            background-color: #c82333;
+            color: white;
+        }
+
+        .plan-card .card-footer {
+            height: 3px;
+            width: 100%;
+            border-radius: 0 0 15px 15px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: #4e54c8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content-header">
+        <h2>Subscribe to Access Premium Tuberculosis Prediction Features</h2>
+    </div>
+
+    <div class="subscription-container">
+        <div class="plan-card">
+            <div class="plan-header">Monthly Plan</div>
+            <div class="plan-price">$19.99</div>
+            <div class="plan-duration">1 Month</div>
+            <ul class="plan-features">
+                <li>Access to prediction features</li>
+                <li>Unlimited reports for 30 days</li>
+            </ul>
+            <a href="{% url 'create_checkout_session' 'monthly' %}" class="subscribe-btn">Subscribe Now</a>
+        </div>
+
+        <div class="plan-card">
+            <div class="plan-header">Yearly Plan</div>
+            <div class="plan-price">$199.99</div>
+            <div class="plan-duration">12 Months</div>
+            <ul class="plan-features">
+                <li>Access to prediction features</li>
+                <li>Unlimited reports for 12 months</li>
+            </ul>
+            <a href="{% url 'create_checkout_session' 'yearly' %}" class="subscribe-btn">Subscribe Now</a>
+        </div>
+    </div>
+
+</body>
+{% endblock content %}
